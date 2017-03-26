@@ -8,6 +8,7 @@
 *.war
 *.ear
 .metadata/
+.recommenders/
 RemoteSystemsTempFiles/
 Servers/
 
