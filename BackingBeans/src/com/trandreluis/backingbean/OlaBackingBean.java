@@ -25,7 +25,17 @@ public class OlaBackingBean {
 	}
 	
 	public void desabilitar() {
-		this.getBotao().setDisabled(true);
+		
+		if(this.getCampo().isDisabled()) {
+			this.getCampo().setDisabled(false);
+			this.getBotao().setStyle("");
+		}
+		
+		else {
+			this.getCampo().setDisabled(true);
+			this.getBotao().setStyle("background-color: red; color: white"); 			
+		}
+		
 	}
 	
 }
