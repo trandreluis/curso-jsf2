@@ -2,7 +2,7 @@ package com.trandreluis.managedbean;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
+//@ManagedBean
 public class OlaMundoBean {
 
 	private String nome;
