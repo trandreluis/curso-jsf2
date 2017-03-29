@@ -1,7 +1,7 @@
-# Arquivo e pasta do eclipse
+# Pastas e arquivos do eclipse
 
-build/
+/build/
 
-.settings/
+.settings
 .classpath
 .project
