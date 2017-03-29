@@ -15,4 +15,8 @@ public class OlaMundoBean {
 		this.nome = nome;
 	}
 	
+	public void enviar() {
+		this.setNome(this.getNome().toUpperCase());
+	}
+	
 }
