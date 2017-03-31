@@ -1,16 +1,19 @@
 package com.trandreluis.visao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import com.trandreluis.dominio.Produto;
 
 @ManagedBean
-@SessionScoped
-public class GestaoProdutosBean {
+@ViewScoped
+public class GestaoProdutosBean implements Serializable {
 
 	private List<Produto> produtos;
 	private Produto produto;
@@ -25,6 +28,16 @@ public class GestaoProdutosBean {
 		this.produto = new Produto();
 	}
 
+	@PostConstruct
+	public void inicializar() {
+		System.out.println("Inicializando bean");
+	}
+	
+	@PreDestroy
+	public void finalizar() {
+		System.out.println("Finalizando bean");
+	}
+	
 	public Produto getProduto() {
 		return produto;
 	}
