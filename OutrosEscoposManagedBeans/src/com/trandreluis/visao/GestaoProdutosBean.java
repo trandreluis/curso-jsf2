@@ -7,12 +7,12 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.NoneScoped;
 
 import com.trandreluis.dominio.Produto;
 
 @ManagedBean
-@ViewScoped
+@NoneScoped
 public class GestaoProdutosBean implements Serializable {
 
 	private List<Produto> produtos;
