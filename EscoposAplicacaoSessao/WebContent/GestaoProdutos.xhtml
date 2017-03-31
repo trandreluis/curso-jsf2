@@ -12,23 +12,31 @@
 <h:body>
 	<h:form>
 		Nome:
-		<h:inputText></h:inputText>
+		<h:inputText value="#{gestaoProdutosBean.produto.nome}"/>
 		<br/>
 		<br/>
-
+		
 		Fabricante:
-		<h:inputText></h:inputText>
+		<h:inputText value="#{gestaoProdutosBean.produto.fabricante}"/>
 		<br/>
 		<br/>
 		
 		Categoria:
-		<h:inputText></h:inputText>
+		<h:inputText value="#{gestaoProdutosBean.produto.categoria}"/>
 		<br/>
 		<br/>
 		
-		<h:commandButton value="Incluir" action="#{gestaoProdutosBean.incluir}"></h:commandButton>
-		
+		<h:commandButton value="Incluir" action="#{gestaoProdutosBean.incluir}"/>
 	</h:form>
+	
+	<ol>
+	
+		<ui:repeat var="item" value="#{gestaoProdutosBean.produtos}">
+			<li>#{item.nome} - #{item.fabricante} - #{item.categoria}</li>
+		</ui:repeat>
+	
+	</ol>
+	
 </h:body>
 
 </html>
