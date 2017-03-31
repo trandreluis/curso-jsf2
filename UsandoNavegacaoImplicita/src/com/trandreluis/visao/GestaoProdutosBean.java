@@ -4,16 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.NoneScoped;
+import javax.faces.bean.SessionScoped;
 
 import com.trandreluis.dominio.Produto;
 
 @SuppressWarnings("serial")
 @ManagedBean
-@NoneScoped
+@SessionScoped
 public class GestaoProdutosBean implements Serializable {
 
 	private List<Produto> produtos;
@@ -29,14 +27,11 @@ public class GestaoProdutosBean implements Serializable {
 		this.produto = new Produto();
 	}
 
-	@PostConstruct
-	public void inicializar() {
-		System.out.println("Inicializando bean");
-	}
-	
-	@PreDestroy
-	public void finalizar() {
-		System.out.println("Finalizando bean");
+	public String obterAjuda() {
+		if(this.produtos.size() > 0) {
+			return "AjudaGestaoProdutosTelefone";
+		}
+		return "AjudaGestaoProdutos";
 	}
 	
 	public Produto getProduto() {
