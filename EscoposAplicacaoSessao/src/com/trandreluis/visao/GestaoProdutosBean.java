@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 import com.trandreluis.dominio.Produto;
 
 @ManagedBean
+@SessionScoped
 public class GestaoProdutosBean {
 
 	private List<Produto> produtos;
