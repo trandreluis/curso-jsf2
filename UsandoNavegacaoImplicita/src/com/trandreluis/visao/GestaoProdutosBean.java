@@ -28,10 +28,10 @@ public class GestaoProdutosBean implements Serializable {
 	}
 
 	public String obterAjuda() {
-		if(this.produtos.size() > 0) {
-			return "AjudaGestaoProdutosTelefone";
+		if(this.produtos.isEmpty()) {
+			return "AjudaGestaoProdutosTelefone?faces-redirect=true";
 		}
-		return "AjudaGestaoProdutos";
+		return "AjudaGestaoProdutos?faces-redirect=true";
 	}
 	
 	public Produto getProduto() {
