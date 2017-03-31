@@ -11,6 +11,7 @@ import javax.faces.bean.NoneScoped;
 
 import com.trandreluis.dominio.Produto;
 
+@SuppressWarnings("serial")
 @ManagedBean
 @NoneScoped
 public class GestaoProdutosBean implements Serializable {
