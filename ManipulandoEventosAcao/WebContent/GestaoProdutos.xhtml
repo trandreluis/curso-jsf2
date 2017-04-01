@@ -33,7 +33,8 @@
 		<br />
 
 		<h:commandButton value="Incluir"
-			action="#{gestaoProdutosBean.incluir}" />
+			action="#{gestaoProdutosBean.incluir}"
+			actionListener="#{gestaoProdutosBean.verificarInclusao}" />
 	</h:form>
 
 	<ol>

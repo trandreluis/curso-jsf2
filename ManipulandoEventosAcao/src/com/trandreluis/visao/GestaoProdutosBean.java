@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 
 import com.trandreluis.dominio.Produto;
 
@@ -32,6 +33,16 @@ public class GestaoProdutosBean implements Serializable {
 			return "AjudaGestaoProdutosTelefone?faces-redirect=true";
 		}
 		return "AjudaGestaoProdutos?faces-redirect=true";
+	}
+
+	public void verificarInclusao(ActionEvent evento) {
+		if("".equals(this.produto.getFabricante())) {
+			this.produto.setFabricante("Sem Frabricante");
+		}
+		
+		if("".equals(this.produto.getCategoria())) {
+			this.produto.setCategoria("Sem Categoria");
+		}
 	}
 	
 	public Produto getProduto() {
