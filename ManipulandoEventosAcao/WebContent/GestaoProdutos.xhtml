@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -13,7 +14,11 @@
 
 	<h:form>
 
-		<h:commandLink value="Ajuda sobre esta tela" action="#{gestaoProdutosBean.obterAjuda}" />
+		<h:commandLink id="ajuda" value="Ajuda sobre esta tela" action="#{gestaoProdutosBean.obterAjuda}">
+		
+			<f:actionListener binding="#{registroCliqueBotaoListener}"/>
+		
+		</h:commandLink>
 		<br />
 		<br />
 	
@@ -32,9 +37,13 @@
 		<br />
 		<br />
 
-		<h:commandButton value="Incluir"
+		<h:commandButton id="incluir" value="Incluir"
 			action="#{gestaoProdutosBean.incluir}"
-			actionListener="#{gestaoProdutosBean.verificarInclusao}" />
+			actionListener="#{gestaoProdutosBean.verificarInclusao}">
+			
+			<f:actionListener binding="#{registroCliqueBotaoListener}"/>
+		
+		</h:commandButton>
 	</h:form>
 
 	<ol>
