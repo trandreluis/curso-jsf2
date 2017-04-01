@@ -14,10 +14,11 @@
 
 	<h:form>
 
-		<h:commandLink id="ajuda" value="Ajuda sobre esta tela" action="#{gestaoProdutosBean.obterAjuda}">
-		
-			<f:actionListener binding="#{registroCliqueBotaoListener}"/>
-		
+		<h:commandLink id="ajuda" value="Ajuda sobre esta tela"
+			action="#{gestaoProdutosBean.obterAjuda}">
+
+			<f:actionListener binding="#{registroCliqueBotaoListener}" />
+
 		</h:commandLink>
 		<br />
 		<br />
@@ -40,20 +41,24 @@
 		<h:commandButton id="incluir" value="Incluir"
 			action="#{gestaoProdutosBean.incluir}"
 			actionListener="#{gestaoProdutosBean.verificarInclusao}">
-			
-			<f:actionListener binding="#{registroCliqueBotaoListener}"/>
-		
+
+			<f:actionListener binding="#{registroCliqueBotaoListener}" />
+
 		</h:commandButton>
 	</h:form>
 
-	<ol>
-
-		<ui:repeat var="item" value="#{gestaoProdutosBean.produtos}">
-			<li>#{item.nome} - #{item.fabricante} - #{item.categoria}</li>
-		</ui:repeat>
-
-	</ol>
-
+	<h:form>
+		<ol>
+			<ui:repeat var="item" value="#{gestaoProdutosBean.produtos}">
+				<li>#{item.nome} - #{item.fabricante} - #{item.categoria} <h:commandButton
+						value="Exluir" action="#{gestaoProdutosBean.excluir}">
+						<f:setPropertyActionListener value="#{item}"
+							target="#{gestaoProdutosBean.produtoSelecionado}" />
+					</h:commandButton>
+				</li>
+			</ui:repeat>
+		</ol>
+	</h:form>
 </h:body>
 
 </html>

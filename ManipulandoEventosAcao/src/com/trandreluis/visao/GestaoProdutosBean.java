@@ -18,6 +18,16 @@ public class GestaoProdutosBean implements Serializable {
 	private List<Produto> produtos;
 	private Produto produto;
 	
+	private Produto produtoSelecionado;
+	
+	public Produto getProdutoSelecionado() {
+		return produtoSelecionado;
+	}
+
+	public void setProdutoSelecionado(Produto produtoSelecionado) {
+		this.produtoSelecionado = produtoSelecionado;
+	}
+
 	public GestaoProdutosBean() {
 		this.produtos = new ArrayList<Produto>();
 		this.produto = new Produto();
@@ -43,6 +53,10 @@ public class GestaoProdutosBean implements Serializable {
 		if("".equals(this.produto.getCategoria())) {
 			this.produto.setCategoria("Sem Categoria");
 		}
+	}
+	
+	public void excluir() {
+		this.produtos.remove(this.produtoSelecionado);
 	}
 	
 	public Produto getProduto() {
