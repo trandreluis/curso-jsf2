@@ -15,34 +15,24 @@ import com.trandreluis.dominio.Produto;
 @SessionScoped
 public class GestaoProdutosBean implements Serializable {
 
+	private String fabricantePesquisa;
 	private List<Produto> produtos;
 	private Produto produto;
 	
 	private Produto produtoSelecionado;
 	
-	public Produto getProdutoSelecionado() {
-		return produtoSelecionado;
-	}
-
-	public void setProdutoSelecionado(Produto produtoSelecionado) {
-		this.produtoSelecionado = produtoSelecionado;
-	}
-
 	public GestaoProdutosBean() {
 		this.produtos = new ArrayList<Produto>();
 		this.produto = new Produto();
 	}
 	
+	public void pesquisar() {
+		System.out.println("Pesquisando...");
+	}
+	
 	public void incluir() {
 		this.produtos.add(this.produto);
 		this.produto = new Produto();
-	}
-
-	public String obterAjuda() {
-		if(this.produtos.isEmpty()) {
-			return "AjudaGestaoProdutosTelefone?faces-redirect=true";
-		}
-		return "AjudaGestaoProdutos?faces-redirect=true";
 	}
 
 	public void verificarInclusao(ActionEvent evento) {
@@ -65,6 +55,22 @@ public class GestaoProdutosBean implements Serializable {
 	
 	public List<Produto> getProdutos() {
 		return produtos;
+	}
+	
+	public Produto getProdutoSelecionado() {
+		return produtoSelecionado;
+	}
+
+	public void setProdutoSelecionado(Produto produtoSelecionado) {
+		this.produtoSelecionado = produtoSelecionado;
+	}
+
+	public String getFabricantePesquisa() {
+		return fabricantePesquisa;
+	}
+
+	public void setFabricantePesquisa(String fabricantePesquisa) {
+		this.fabricantePesquisa = fabricantePesquisa;
 	}
 	
 }

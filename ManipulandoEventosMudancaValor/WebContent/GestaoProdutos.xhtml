@@ -14,15 +14,6 @@
 
 	<h:form>
 
-		<h:commandLink id="ajuda" value="Ajuda sobre esta tela"
-			action="#{gestaoProdutosBean.obterAjuda}">
-
-			<f:actionListener binding="#{registroCliqueBotaoListener}" />
-
-		</h:commandLink>
-		<br />
-		<br />
-	
 		Nome:
 		<h:inputText value="#{gestaoProdutosBean.produto.nome}" />
 		<br />
@@ -41,10 +32,16 @@
 		<h:commandButton id="incluir" value="Incluir"
 			action="#{gestaoProdutosBean.incluir}"
 			actionListener="#{gestaoProdutosBean.verificarInclusao}">
-
-			<f:actionListener binding="#{registroCliqueBotaoListener}" />
-
 		</h:commandButton>
+	</h:form>
+	<br/>
+	
+	<h:form>
+	
+		Pesquisa por fabricante:
+		<h:inputText value="#{gestaoProdutosBean.fabricantePesquisa}"/>
+		<h:commandButton value="Pesquisar" action="#{gestaoProdustosBean.pesquisar}"/>
+	
 	</h:form>
 
 	<h:form>
