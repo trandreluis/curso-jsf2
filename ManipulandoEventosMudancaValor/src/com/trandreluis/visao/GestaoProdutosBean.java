@@ -28,7 +28,6 @@ public class GestaoProdutosBean implements Serializable {
 		this.produtos = new ArrayList<Produto>();
 		this.produtosFiltrados = new ArrayList<Produto>();
 		this.produto = new Produto();
-		
 	}
 	
 	public void nomePesquisaAlterado(ValueChangeEvent evento) {
@@ -38,7 +37,7 @@ public class GestaoProdutosBean implements Serializable {
 		this.produtosFiltrados.clear();
 		
 		for(Produto produto : this.produtos) {
-			if(produto.getNome().startsWith(this.nomePesquisa)) {
+			if(produto.getNome().startsWith((String)evento.getNewValue())) {
 				this.produtosFiltrados.add(produto);
 			}
 		}
