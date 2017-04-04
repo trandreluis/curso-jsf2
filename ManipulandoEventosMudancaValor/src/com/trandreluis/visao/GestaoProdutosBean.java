@@ -7,6 +7,8 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
+import javax.faces.event.ValueChangeListener;
 
 import com.trandreluis.dominio.Produto;
 
@@ -15,19 +17,32 @@ import com.trandreluis.dominio.Produto;
 @SessionScoped
 public class GestaoProdutosBean implements Serializable {
 
-	private String fabricantePesquisa;
+	private String nomePesquisa;
 	private List<Produto> produtos;
+	private List<Produto> produtosFiltrados;
 	private Produto produto;
 	
 	private Produto produtoSelecionado;
 	
 	public GestaoProdutosBean() {
 		this.produtos = new ArrayList<Produto>();
+		this.produtosFiltrados = new ArrayList<Produto>();
 		this.produto = new Produto();
+		
 	}
 	
-	public void pesquisar() {
-		System.out.println("Pesquisando...");
+	public void nomePesquisaAlterado(ValueChangeEvent evento) {
+		System.out.println("Valor atual: "+this.nomePesquisa);
+		System.out.println("Valor novo: "+evento.getNewValue());
+		
+		this.produtosFiltrados.clear();
+		
+		for(Produto produto : this.produtos) {
+			if(produto.getNome().startsWith(this.nomePesquisa)) {
+				this.produtosFiltrados.add(produto);
+			}
+		}
+		
 	}
 	
 	public void incluir() {
@@ -65,12 +80,16 @@ public class GestaoProdutosBean implements Serializable {
 		this.produtoSelecionado = produtoSelecionado;
 	}
 
-	public String getFabricantePesquisa() {
-		return fabricantePesquisa;
+	public String getNomePesquisa() {
+		return nomePesquisa;
 	}
 
-	public void setFabricantePesquisa(String fabricantePesquisa) {
-		this.fabricantePesquisa = fabricantePesquisa;
+	public void setNomePesquisa(String nomePesquisa) {
+		this.nomePesquisa = nomePesquisa;
+	}
+
+	public List<Produto> getProdutosFiltrados() {
+		return produtosFiltrados;
 	}
 	
 }

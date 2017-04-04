@@ -39,14 +39,15 @@
 	<h:form>
 	
 		Pesquisa por fabricante:
-		<h:inputText value="#{gestaoProdutosBean.fabricantePesquisa}"/>
-		<h:commandButton value="Pesquisar" action="#{gestaoProdutosBean.pesquisar}"/>
+		<h:inputText value="#{gestaoProdutosBean.nomePesquisa}"
+		valueChangeListener="#{gestaoProdutosBean.nomePesquisaAlterado}"
+		onchange="submit()"/>
 	
 	</h:form>
 
 	<h:form>
 		<ol>
-			<ui:repeat var="item" value="#{gestaoProdutosBean.produtos}">
+			<ui:repeat var="item" value="#{gestaoProdutosBean.produtosFiltrados}">
 				<li>#{item.nome} - #{item.fabricante} - #{item.categoria} <h:commandButton
 						value="Exluir" action="#{gestaoProdutosBean.excluir}">
 						<f:setPropertyActionListener value="#{item}"
