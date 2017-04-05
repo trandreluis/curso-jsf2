@@ -10,6 +10,19 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Teste</title>
 		
+		<style>
+		
+			.campo {
+				background-color: #C0C0C0;
+				padding: 10px;
+			}
+			
+			.campo:focus {
+				background-color: green;
+			}
+		
+		</style>
+		
 		<script>
 		
 			function validar() {
@@ -27,13 +40,14 @@
 	</h:head>
 	<h:body>
 		<h:form id="newsletterForm">
-			<h:outputLabel value="Assine nossa newsletter" />
+			<h:outputLabel value="Assine nossa newsletter" rendered="true" />
 			<br/>
 			
 			<h:inputText value="Seu e-mail aqui" 
 				size="40" maxlength="30" title="Informe seu e-mail aqui"
 				onfocus="this.value=''"
-				id="email" />
+				id="email"
+				style="font-size: 19px" styleClass="campo" />
 	
 			<h:commandButton value="Assinar" 
 				onclick="return validar()"
