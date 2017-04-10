@@ -12,7 +12,7 @@
 		<h:form id="frm">
 			<h1>Escolha seus times favoritos</h1>
 			
-			<h:selectManyMenu id="times" value="#{timesFavoritosBean.times}">
+			<h:selectManyListbox id="times" value="#{timesFavoritosBean.times}" size="3">
 				<f:selectItem itemValue="Corinthians" itemLabel="Timão" />
 				<f:selectItem itemValue="Flamengo" itemLabel="Mengão" />
 				<f:selectItem itemValue="Palmeiras"/>
@@ -20,8 +20,9 @@
 				<f:selectItem itemValue="São Paulo"/>
 				<f:selectItem itemValue="Vasco"/>
 				<f:selectItem itemValue="Outro"/>
-			</h:selectManyMenu>
+			</h:selectManyListbox>
 			
+			<br></br>
 			<h:commandButton value="Escolher" action="#{timesFavoritosBean.escolher}" />
 			
 			<ul>
