@@ -7,8 +7,18 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class PerfilUsuarioBean {
 
+	private String sexo;
+	
 	public String enviar() {
 		return "Confirmacao";
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 	
 }

@@ -11,25 +11,7 @@
 	</h:head>
 	<h:body>
 		<h:form id="frm">	
-			<h1>Escolha seu time favorito!</h1>
-			<h:selectOneListbox id="time" value="#{timeFavoritoBean.time}">
-				<f:selectItem itemValue="Corinthians" itemLabel="Timão"/>
-				<f:selectItem itemValue="Flamengo" itemLabel="Mengão"/>
-				<f:selectItem itemValue="Palmeiras"/>
-				<f:selectItem itemValue="Santos"/>
-				<f:selectItem itemValue="São Paulo"/>
-				<f:selectItem itemValue="Vasco"/>
-				<f:selectItem itemValue="Outro"/>
-			</h:selectOneListbox>
-			
-			<h:commandButton value="Escolher" action="#{timeFavoritoBean.escolher}"/>
-			<br/><br/>
-
-			<div>
-				<h:outputText value="#{timeFavoritoBean.time}" rendered="#{not empty timeFavoritoBean.time}"
-				style="background-color: red; color: #fff; fot-size: 32px; font-family: Arial"/>
-			</div>
-						
+			Sexo selecionado: #{perfilUsuarioBean.sexo}				
 		</h:form>
 	</h:body>
 </html>

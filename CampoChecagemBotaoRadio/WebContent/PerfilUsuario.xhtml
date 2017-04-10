@@ -10,10 +10,12 @@
 	</h:head>
 	<h:body>
 		<h:form id="frm">
-			
-			<br></br>
+			Sexo
+			<h:selectOneRadio value="#{perfilUsuarioBean.sexo}">
+				<f:selectItem itemValue="M" itemLabel="Masculino" />
+				<f:selectItem itemValue="F" itemLabel="Feminino" />
+			</h:selectOneRadio>
 			<h:commandButton value="Escolher" action="#{perfilUsuarioBean.enviar}" />
-			
 		</h:form>
 	</h:body>
 </html>
