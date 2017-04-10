@@ -11,11 +11,24 @@
 	<h:body>
 		<h:form id="frm">
 			Sexo
-			<h:selectOneRadio value="#{perfilUsuarioBean.sexo}">
+			<h:selectOneRadio value="#{perfilUsuarioBean.sexo}" layout="lineDirection" >
 				<f:selectItem itemValue="M" itemLabel="Masculino" />
 				<f:selectItem itemValue="F" itemLabel="Feminino" />
 			</h:selectOneRadio>
-			<h:commandButton value="Escolher" action="#{perfilUsuarioBean.enviar}" />
+			<br/>
+			<h:selectBooleanCheckbox value="#{perfilUsuarioBean.receberNovidades}" />
+			Gostaria de receber novidades da empresa por e-mail
+			<br/><br/>
+			Linguagens favoritas:
+			<h:selectManyCheckbox layout="lineDrirection" value="#{perfilUsuarioBean.linguagens}">
+				<f:selectItem itemValue="Java" />
+				<f:selectItem itemValue="Ruby" />
+				<f:selectItem itemValue="Python" />
+				<f:selectItem itemValue="PHP" />
+				<f:selectItem itemValue="Groovy" />
+			</h:selectManyCheckbox>
+			<br/>
+			<h:commandButton value="Enviar" action="#{perfilUsuarioBean.enviar}" />
 		</h:form>
 	</h:body>
 </html>

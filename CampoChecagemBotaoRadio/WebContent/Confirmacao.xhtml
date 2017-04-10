@@ -7,11 +7,24 @@
 
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Time Favorito</title>
+		<title>Confirmação</title>
 	</h:head>
 	<h:body>
 		<h:form id="frm">	
-			Sexo selecionado: #{perfilUsuarioBean.sexo}				
+			Sexo selecionado: #{perfilUsuarioBean.sexo}
+			<br/><br/>
+			Receber novidades:
+			#{perfilUsuarioBean.receberNovidades ? 'Sim' : 'Não'}	
+			<br/><br/>
+			Linguagens:
+			<ul>
+				
+				<ui:repeat var="linguagem" value="#{perfilUsuarioBean.linguagens}">
+					<li>#{linguagem}</li>
+				</ui:repeat>
+			
+			</ul>
+						
 		</h:form>
 	</h:body>
 </html>
