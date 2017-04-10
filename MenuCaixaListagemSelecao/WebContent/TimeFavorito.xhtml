@@ -12,7 +12,7 @@
 	<h:body>
 		<h:form id="frm">	
 			<h1>Escolha seu time favorito!</h1>
-			<h:selectOneMenu id="time" value="#{timeFavoritoBean.time}">
+			<h:selectOneListbox id="time" value="#{timeFavoritoBean.time}">
 				<f:selectItem itemValue="Corinthians" itemLabel="Timão"/>
 				<f:selectItem itemValue="Flamengo" itemLabel="Mengão"/>
 				<f:selectItem itemValue="Palmeiras"/>
@@ -20,7 +20,7 @@
 				<f:selectItem itemValue="São Paulo"/>
 				<f:selectItem itemValue="Vasco"/>
 				<f:selectItem itemValue="Outro"/>
-			</h:selectOneMenu>
+			</h:selectOneListbox>
 			
 			<h:commandButton value="Escolher" action="#{timeFavoritoBean.escolher}"/>
 			<br/><br/>
