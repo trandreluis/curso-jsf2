@@ -6,17 +6,50 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Perfil do Usuário</title>
+		<title>Tabelas</title>
 	</h:head>
 	<h:body>
 		<h:form id="frm">
-			Nome informado:
-			#{formularioBean.nome}
-			<br/>
-			<h:commandButton image="imagens/icone-voltar.png" action="Formulario" />
-			<h:commandLink action="Formulario">
-				<h:graphicImage value="imagens/icone-voltar.png" />
-			</h:commandLink>
+			
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">
+							Cadastro de novo usuário do sistema
+						</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>
+						<h:outputLabel value="Nome completo:"/>
+					</td>
+					<td>
+						<h:inputText size="50" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputLabel value="E-mail:"/>
+					</td>
+					<td>
+						<h:inputText size="50" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputLabel value="Senha:"/>
+					</td>
+					<td>
+						<h:inputSecret size="20"/>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<h:commandButton value="Cadastrar"/>
+					</td>
+				</tr>
+			</table>
 			
 		</h:form>
 	</h:body>
