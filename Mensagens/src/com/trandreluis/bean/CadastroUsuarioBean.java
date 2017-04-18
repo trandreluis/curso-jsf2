@@ -1,5 +1,7 @@
 package com.trandreluis.bean;
 
+import java.util.Date;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.bean.ManagedBean;
@@ -19,7 +21,7 @@ public class CadastroUsuarioBean {
 			this.adicionarMenasagem("frm:nome", FacesMessage.SEVERITY_ERROR, "Informe o nome corretamente",
 					"O nome deve conter mais de 10 caracters!");
 		}
-
+		
 	}
 
 	/**
@@ -31,6 +33,10 @@ public class CadastroUsuarioBean {
 
 	}
 
+	public boolean diaDeDescanso() {
+		return false;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
