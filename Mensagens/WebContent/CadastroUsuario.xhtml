@@ -18,19 +18,15 @@
 				</f:facet>
 				
 				<h:outputLabel value="Nome completo:" />
-				<h:panelGroup>
-					<h:inputText size="50" />
-					<h:graphicImage value="/imagens/icone-ajuda.png" />
-				</h:panelGroup>
+				<h:inputText size="50" value="#{cadastroUsuarioBean.nome}" id="nome" />
+				
 				<h:outputLabel value="E-mail:" />
-				<h:inputText size="50" />
+				<h:inputText size="50" value="#{cadastroUsuarioBean.email}" id="email" />
 				
 				<h:outputLabel value="Senha:" />
-				<h:inputSecret size="20" />
+				<h:inputSecret size="20" value="#{cadastroUsuarioBean.senha}" id="senha" />
 				
-				<br/>
-				
-				<h:commandButton value="Cadastrar" />
+				<h:commandButton value="Cadastrar" action="#{cadastroUsuarioBean.cadastrar}" />
 				
 			</h:panelGrid>
 			
