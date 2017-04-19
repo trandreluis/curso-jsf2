@@ -5,38 +5,48 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Mensagens</title>
-	</h:head>
-	<h:body>
-		<h:form id="frm">	
-		
-			<h:messages layout="table" errorStyle="color: red" infoStyle="color: green"
-			warnStyle="color: orange" fatalStyle="color: gray"/>
-			
-			<h:panelGrid columns="2" >
-				<f:facet name="header">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Mensagens</title>
+</h:head>
+<h:body>
+	<h:form id="frm">
+
+		<h:messages layout="table" errorStyle="color: red"
+			infoStyle="color: green" warnStyle="color: orange"
+			fatalStyle="color: gray" showDetail="true" showSummary="false" globalOnly="true" />
+
+		<h:panelGrid columns="2">
+			<f:facet name="header">
 					Cadastro de novo usuário do sistema
 				</f:facet>
-				
-				<h:outputLabel value="Nome completo:" />
-				
-				<h:panelGroup>
-					<h:inputText size="50" value="#{cadastroUsuarioBean.nome}" id="nome" />
-					<h:message for="nome" />
-				</h:panelGroup>
-				
-				<h:outputLabel value="E-mail:" />
-				<h:inputText size="50" value="#{cadastroUsuarioBean.email}" id="email" />
-				
-				<h:outputLabel value="Senha:" />
-				<h:inputSecret size="20" value="#{cadastroUsuarioBean.senha}" id="senha" />
-				
-				<h:commandButton value="Cadastrar" action="#{cadastroUsuarioBean.cadastrar}" />
-				
-			</h:panelGrid>
-			
-		</h:form>
-	</h:body>
+
+			<h:outputLabel value="Nome completo:" />
+
+			<h:panelGroup>
+				<h:inputText size="50" value="#{cadastroUsuarioBean.nome}" id="nome" />
+				<h:message for="nome" />
+			</h:panelGroup>
+
+			<h:outputLabel value="E-mail:" />
+
+			<h:panelGroup>
+				<h:inputText size="50" value="#{cadastroUsuarioBean.email}"
+					id="email" />
+				<h:message for="email" />
+			</h:panelGroup>
+
+			<h:outputLabel value="Senha:" />
+			<h:panelGroup>
+				<h:inputSecret size="20" value="#{cadastroUsuarioBean.senha}"
+					id="senha" />
+				<h:message for="senha" />
+			</h:panelGroup>
+			<h:commandButton value="Cadastrar"
+				action="#{cadastroUsuarioBean.cadastrar}" />
+
+		</h:panelGrid>
+
+	</h:form>
+</h:body>
 </html>

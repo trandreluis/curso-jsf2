@@ -28,7 +28,20 @@ public class CadastroUsuarioBean {
 			this.adicionarMenasagem(null, FacesMessage.SEVERITY_WARN, "Hoje é domingo.",
 					"Domingo é um dia de descanso.");
 		}
-		
+
+		FacesContext context = FacesContext.getCurrentInstance();
+
+		if (!context.getMessages().hasNext()) {
+
+			/**
+			 * Realizar acao de salvar no banco, pois não há erros.
+			 */
+
+			this.adicionarMenasagem(null, FacesMessage.SEVERITY_INFO, "Usuário cadastrado.",
+					"O cadastro foi realizado com sucesso!");
+
+		}
+
 	}
 
 	/**
@@ -37,22 +50,22 @@ public class CadastroUsuarioBean {
 	 *            tambem conhecido como clientID
 	 */
 	private void adicionarMenasagem(String componentID, Severity severidade, String sumarioErro, String detalheErro) {
-		
+
 		FacesContext context = FacesContext.getCurrentInstance();
 		FacesMessage message = new FacesMessage(severidade, sumarioErro, detalheErro);
-		
+
 		context.addMessage(componentID, message);
-		
+
 	}
 
 	public boolean diaDeDescanso() {
-		
-		if(Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
-			return true;			
+
+		if (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+			return true;
 		}
-		
+
 		return false;
-		
+
 	}
 
 	public String getNome() {
