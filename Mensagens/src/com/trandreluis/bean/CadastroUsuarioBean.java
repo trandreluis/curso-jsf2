@@ -7,6 +7,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
@@ -18,7 +19,7 @@ public class CadastroUsuarioBean {
 
 	public void cadastrar() {
 
-		if (this.getNome() != null || this.getNome().length() < 10) {
+		if (this.getNome() == null || this.getNome().length() < 10) {
 			this.adicionarMenasagem("frm:nome", FacesMessage.SEVERITY_ERROR, "Informe o nome corretamente.",
 					"O nome deve conter mais de 10 caracters!");
 		}
@@ -27,7 +28,7 @@ public class CadastroUsuarioBean {
 			this.adicionarMenasagem(null, FacesMessage.SEVERITY_WARN, "Hoje é domingo",
 					"Domingo é um dia de descanso.");
 		}
-
+		
 	}
 
 	/**
@@ -36,7 +37,12 @@ public class CadastroUsuarioBean {
 	 *            tambem conhecido como clientID
 	 */
 	private void adicionarMenasagem(String componentID, Severity severidade, String sumarioErro, String detalheErro) {
-
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		FacesMessage message = new FacesMessage(severidade, sumarioErro, detalheErro);
+		
+		context.addMessage(componentID, message);
+		
 	}
 
 	public boolean diaDeDescanso() {
