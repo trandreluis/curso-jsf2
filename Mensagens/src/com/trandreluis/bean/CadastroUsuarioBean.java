@@ -47,7 +47,7 @@ public class CadastroUsuarioBean {
 
 	public boolean diaDeDescanso() {
 		
-		if(Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+		if(Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
 			return true;			
 		}
 		
