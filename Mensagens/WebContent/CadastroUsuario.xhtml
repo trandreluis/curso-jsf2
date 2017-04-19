@@ -21,7 +21,11 @@
 				</f:facet>
 				
 				<h:outputLabel value="Nome completo:" />
-				<h:inputText size="50" value="#{cadastroUsuarioBean.nome}" id="nome" />
+				
+				<h:panelGroup>
+					<h:inputText size="50" value="#{cadastroUsuarioBean.nome}" id="nome" />
+					<h:message for="nome" />
+				</h:panelGroup>
 				
 				<h:outputLabel value="E-mail:" />
 				<h:inputText size="50" value="#{cadastroUsuarioBean.email}" id="email" />

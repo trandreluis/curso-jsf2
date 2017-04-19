@@ -25,7 +25,7 @@ public class CadastroUsuarioBean {
 		}
 
 		if (diaDeDescanso()) {
-			this.adicionarMenasagem(null, FacesMessage.SEVERITY_WARN, "Hoje é domingo",
+			this.adicionarMenasagem(null, FacesMessage.SEVERITY_WARN, "Hoje é domingo.",
 					"Domingo é um dia de descanso.");
 		}
 		
